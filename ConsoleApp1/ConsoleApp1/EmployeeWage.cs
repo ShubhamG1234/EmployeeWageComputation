@@ -8,23 +8,26 @@ namespace EmployeeWageComputation
 {
     internal class EmployeeWage
     {
+        const int present = 1,
+                   absent = 0,
+                   ratePerHr = 20,
+                   empWorkingHrs = 8;
+
         public void StartWageCal()
         {
             Random random = new Random();
-            const int present = 1;
-            const int absent = 0;
 
+            int empCheck = random.Next(0, 2);
 
-            int ispresent = random.Next(2);
-
-            if (ispresent == present)
+            if (empCheck == present)
             {
-                Console.WriteLine(" Employee is Present ");
-
+                Console.WriteLine("Employee is present");
+                int dailyEmpWage = empWorkingHrs * ratePerHr;
+                Console.WriteLine("dailyEmpWage:" + dailyEmpWage);
             }
             else
             {
-                Console.WriteLine(" Employee is Absent");
+                Console.WriteLine("Employee is absent");
             }
         }
     }
